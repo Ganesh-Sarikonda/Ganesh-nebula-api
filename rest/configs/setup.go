@@ -127,7 +127,7 @@ func ConnectClubsDB() *sql.DB {
 		// ping the database
 		err = db.PingContext(ctx)
 		if err != nil {
-			log.Panic("Unable to ping database")
+			log.Fatal("Unable to connect to clubs database.", "Error: ", err)
 		}
 
 		log.Printf("Connected to Clubs DB")
